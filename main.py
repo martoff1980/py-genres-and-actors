@@ -10,21 +10,21 @@ django.setup()
 def main() -> QuerySet:
 
     # 1. CREATE
-    genres = ['Western', 'Action', 'Dramma']
+    genres = ["Western", "Action", "Dramma"]
     for genre_name in genres:
         Genre.objects.create(name=genre_name)
-        
+
     actors = [
-        ('George', 'Klooney'),
-        ('Kianu', 'Reaves'),
-        ('Scarlett', 'Keegan'),
-        ('Will', 'Smith'),
-        ('Jaden', 'Smith'),
-        ('Scarlett', 'Johansson'),
+        ("George", "Klooney"),
+        ("Kianu", "Reaves"),
+        ("Scarlett", "Keegan"),
+        ("Will", "Smith"),
+        ("Jaden", "Smith"),
+        ("Scarlett", "Johansson"),
     ]
     for first, last in actors:
         Actor.objects.create(first_name=first, last_name=last)
-        
+
     # 2. UPDATE
     dramma_genre = Genre.objects.get(name="Dramma")
     dramma_genre.name = "Drama"
